@@ -24,9 +24,10 @@ function AskAboutSet (setName, complexityValue){
 }
 
 
+function generatePassword() {
 
 /* Setting available characters
- I'm removing the space, single ' ,and double " characters to prevent
+ I'm removing the space " ", single ' ,and double " characters to prevent
  future errors with how strings are parsed. Also, I'm setting each 
  character set to a value so that when combined, I'll know what the 
  full character set the user wants
@@ -95,7 +96,7 @@ while (passwordComplexity < 1){
   } */
   passwordComplexity += parseInt(AskAboutSet("Include lower case alphabet characters? (Y)es or (N)o",2))
 
-    // Ask about numeric
+    /* Ask about numeric
     characterSet = ""
     while (!characterSet){
       characterSet = window.prompt("Include numerict characters? (Y)es or (N)o")
@@ -113,8 +114,10 @@ while (passwordComplexity < 1){
           characterSet = ""
       }
   }
+*/
+  passwordComplexity += parseInt(AskAboutSet("Include numerict characters? (Y)es or (N)o",4))
 
-      // Ask about special characters
+      /* Ask about special characters
   characterSet = ""
   while (!characterSet){
     characterSet = window.prompt("Include special characters? (Y)es or (N)o")
@@ -131,7 +134,9 @@ while (passwordComplexity < 1){
         window.alert("Please type letter (Y) for Yes or (N) for No to the question")
         characterSet = ""
     }
-  }
+  } */
+
+  passwordComplexity += parseInt(AskAboutSet("Include special characters? (Y)es or (N)o",8))
 
   // Determine result set of password characters
   console.log("Password complexity level chosen: " + passwordComplexity.toString())
@@ -186,7 +191,18 @@ while (passwordComplexity < 1){
       break;
   }
 }
+ // Creating password using selected character set(s)
+ // Loops number of times equal to password length
+ // Then adds single character from random number between 1 and length of the requested character sets
+ // 
+var passwordGenerated = ""
+var randomCharacterLocation
+ for (var i=1; i<= passwordLength; i++){
+    randomCharacterLocation = Math.floor(Math.random() * (resultSet.length)) + 1; 
+    passwordGenerated = passwordGenerated.concat(resultSet.charAt(randomCharacterLocation))
+    }
 
+    return passwordGenerated;
 
 }
 
