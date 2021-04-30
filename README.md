@@ -13,4 +13,4 @@
 ### This is a javascript program which will generate a random password between 8 and 128 characters using any combination of selected character sets (Upper case alpha, lower case alpha, numeric, and special characters)
 
 
-![alt text](https://mohlenkamp.github.io/Password-Generator/Password-Generator-Screen.gif)
+![alt text](https://mohlenkamp.github.io/Password-Generator/Password-Generator-Screen.gif?raw=true)
