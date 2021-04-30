@@ -1,8 +1,17 @@
 // Assignment code here
 
+// John Mohlenkamp
+// Weekly Challenge Module 3
+// Password Generator
+
+// I didn't remove the code I started with (nor the console logs), so
+// you could see what I was doing. I didn't know if that was better, or if
+// you'd just rather see the code without the comments.
+
 
 // This is a generic function that will ask the user about which character sets they
-// want in the generated password.
+// want in the generated password, because it's cleaner.
+
 function AskAboutSet (setName, complexityValue){
   var characterSet = ""
   while (!characterSet){
@@ -139,7 +148,7 @@ while (passwordComplexity < 1){
   passwordComplexity += parseInt(AskAboutSet("Include special characters? (Y)es or (N)o",8))
 
   // Determine result set of password characters
-  console.log("Password complexity level chosen: " + passwordComplexity.toString())
+  // console.log("Password complexity level chosen: " + passwordComplexity.toString())
   switch (passwordComplexity){
     case 1: // Only upper case selected
       resultSet = upperCase
@@ -202,11 +211,15 @@ var randomCharacterLocation
     passwordGenerated = passwordGenerated.concat(resultSet.charAt(randomCharacterLocation))
     }
 
+    window.alert("Your secure password is: " + passwordGenerated)
+    //console.log ("Password length: " + passwordGenerated.length)
+    //console.log ("Password complexity level: " + passwordComplexity)
+
     return passwordGenerated;
 
 }
 
-
+// ****************** End of my code  *************************** //
 
 
 
